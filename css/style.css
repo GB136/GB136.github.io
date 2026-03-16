@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    /*flex-direction: row-reverse;*/
+    align-items: flex-start;
+    gap: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#avatar img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info {
+    flex: 1;
+}
+
+#full-name h1 {
+    margin: 0;
+}
+
+#email,
+#github-link,
+#linkedin-link {
+    margin-top: 10px;
+}
+
+#hobbies ul {
+    margin-top: 10px;
+}
+
+#student-id {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #0077b5;
+}
+
+a:hover {
+    text-decoration: underline;
+}
