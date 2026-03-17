@@ -2,61 +2,102 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Student Proposal Profile</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lê Gia Bảo</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <div class="container">
-
-        <div id="avatar">
-            <img src="images/avatar.jpg" alt="Avatar">
-        </div>
-
-        <div class="info">
-            <h1> Trang cá nhân sinh viên</h1>
-            <div id="full-name">
-                <h2>Lê Gia Bảo</h2>
-            </div>
-
-            <div id="student-id">
-                22123456
-            </div>
-
-            <div id="email">
-                <p>Email: legiabao@email.com</p>
-            </div>
-
-            <div id="github-link">
-                <p>GitHub:
-                    <a href="https://github.com/GB136" target="_blank">
-                    https://github.com/GB136
-                </a>
-                </p>
-            </div>
-
-            <div id="linkedin-link">
-                <p>LinkedIn:
-                    <a href="https://www.linkedin.com/in/le-gia-bao-2b72b6341/" target="_blank">
-                    https://www.linkedin.com/in/le-gia-bao-2b72b6341/
-                </a>
-                </p>
-            </div>
-
-            <div id="hobbies">
-                <h3>Sở thích</h3>
-                <ul>
-                    <li>Tập gym</li>
-                    <li>Chơi game</li>
-                    <li>Nghe nhạc</li>
-                </ul>
-            </div>
-
-        </div>
-
+    <div class="lang-switch">
+        <button onclick="switchLang('vi')" id="btn-vi" class="active">VI</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
     </div>
+
+    <div id="student-id" aria-hidden="true">23720061</div>
+
+    <div class="card">
+
+        <h2 class="card-title" data-vi="TRANG CÁ NHÂN SINH VIÊN" data-en="STUDENT PROFILE">
+            TRANG CÁ NHÂN SINH VIÊN
+        </h2>
+
+        <div class="card-body">
+
+            <div class="col-avatar">
+                <img id="avatar" src="image/avatar.jpg" alt="Ảnh đại diện" />
+                <div class="avatar-label" data-vi="ẢNH ĐẠI DIỆN" data-en="AVATAR">
+                </div>
+            </div>
+
+            <div class="col-info">
+
+                <h3 class="info-title" data-vi="BẢNG THÔNG TIN" data-en="INFORMATION">
+                    BẢNG THÔNG TIN
+                </h3>
+
+                <table class="info-table">
+                    <tr>
+                        <td class="label" data-vi="Họ tên" data-en="Full name">Họ tên</td>
+                        <td id="full-name">Lê Gia Bảo</td>
+                    </tr>
+                    <tr>
+                        <td class="label" data-vi="MSSV" data-en="Student ID">MSSV</td>
+                        <td id="student-id-show">23720061</td>
+                    </tr>
+                    <tr>
+                        <td class="label" data-vi="Email" data-en="Email">Email</td>
+                        <td id="email">baoollgg@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="label" data-vi="Ngành" data-en="Major">Ngành</td>
+                        <td data-vi="Khoa học dữ liệu" data-en="Data Science">Khoa học dữ liệu</td>
+                    </tr>
+                    <tr>
+                        <td class="label" data-vi="Trường" data-en="University">Trường</td>
+                        <td data-vi="ĐH Công nghiệp TP.HCM" data-en="IUH">ĐH Công nghiệp TP.HCM</td>
+                    </tr>
+                </table>
+
+                <div class="info-links">
+                    <div id="github-link">
+                        <span class="label">GitHub:</span>
+                        <a href="https://github.com/GB136" target="_blank">
+                            https://github.com/GB136
+            </a>
+                    </div>
+                    <div id="linkedin-link">
+                        <span class="label">LinkedIn:</span>
+                        <a href="https://www.linkedin.com/in/le-gia-bao-2b72b6341/" target="_blank">
+                            https://www.linkedin.com/in/le-gia-bao-2b72b6341/
+            </a>
+                    </div>
+                </div>
+
+                <div class="info-hobbies">
+                    <div class="label" data-vi="Sở thích:" data-en="Hobbies:">
+                        Sở thích:
+                    </div>
+                    <div id="hobbies">
+                        <span data-vi="Nghe nhạc" data-en="Listen to music">– Nghe nhạc</span>
+                        <span data-vi="Chơi game" data-en="Gaming">– Chơi game</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('[data-vi][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            document.getElementById('btn-vi').classList.toggle('active', lang === 'vi');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+    </script>
 
 </body>
 
